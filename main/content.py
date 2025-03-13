@@ -1,0 +1,148 @@
+products = [
+    # Грузия (Georgia)
+    {
+        "title": "BMW 330I 2021 год , 32 тысячи пробег",
+        "img": "assets/img/portfolio/georgia_4.jpg",
+        "price": 3350000,
+        "button_link": "#contact_form",
+        "country": "Georgia",
+    },
+    {
+        "title": "BMW 40i 2021 год , 42 тысяч пробега",
+        "img": "assets/img/portfolio/georgia_1.jpg",
+        "price": 5450000,
+        "button_link": "#contact_form",
+        "country": "Georgia",
+    },
+    {
+        "title": "MB GLE450 2022 год , 38 тысяч пробег",
+        "img": "assets/img/portfolio/georgia_2.jpg",
+        "price": 8300000,
+        "button_link": "#contact_form",
+        "country": "Georgia",
+    },
+    {
+        "title": "MB GLE 53 COUPE 2022 год , 42 тысяч пробег",
+        "img": "assets/img/portfolio/georgia_3.jpg",
+        "price": 9300000,
+        "button_link": "#contact_form",
+        "country": "Georgia",
+    },
+    # Корея (Korea)
+    {
+        "title": "BMW 3 серии 320d, 2021 год.",
+        "img": "assets/img/portfolio/korea_1.jpg",
+        "price": 3800000,
+        "button_link": "#contact_form",
+        "country": "Korea",
+    },
+    {
+        "title": "Kia Mohave, 2022 год.",
+        "img": "assets/img/portfolio/korea_2.jpg",
+        "price": 4100000,
+        "button_link": "#contact_form",
+        "country": "Korea",
+    },
+    {
+        "title": "Mercedes Benz E220d, 2021",
+        "img": "assets/img/portfolio/korea_3.jpg",
+        "price": 4100000,
+        "button_link": "#contact_form",
+        "country": "Korea",
+    },
+    {
+        "title": "Kia Carnival IV, 2021.",
+        "img": "assets/img/portfolio/korea_4.jpg",
+        "price": 3200000,
+        "button_link": "#contact_form",
+        "country": "Korea",
+    },
+    # Япония (Japan)
+    {
+        "title": "Toyota Tank. 2020 год.",
+        "img": "assets/img/portfolio/japan_1.jpg",
+        "price": 9900000,
+        "button_link": "#contact_form",
+        "country": "Japan",
+    },
+    {
+        "title": "Honda Stepwgn Spada, 2017",
+        "img": "assets/img/portfolio/japan_2.jpg",
+        "price": 1880000,
+        "button_link": "#contact_form",
+        "country": "Japan",
+    },
+    {
+        "title": "Subaru Levorg 2021, 42.000 км",
+        "img": "assets/img/portfolio/japan_3.jpg",
+        "price": 1950500,
+        "button_link": "#contact_form",
+        "country": "Japan",
+    },
+    # Китай (China)
+    {
+        "title": "Changan UNI-V, 2022, 25.000 пробега",
+        "img": "assets/img/portfolio/china_1.jpg",
+        "price": 1868900,
+        "button_link": "#contact_form",
+        "country": "China",
+    },
+    {
+        "title": "Volkswagen Golf R, 2021, 32.000 пробега",
+        "img": "assets/img/portfolio/china_2.jpg",
+        "price": 2100000,
+        "button_link": "#contact_form",
+        "country": "China",
+    },
+    {
+        "title": "BMW X3, 2021.",
+        "img": "assets/img/portfolio/china_3.jpg",
+        "price": 4400000,
+        "button_link": "#contact_form",
+        "country": "China",
+    },
+    # Европа (Europe)
+    {
+        "title": "Mercedes-Benz GLE 300 d AMG-Line 2022",
+        "img": "assets/img/portfolio/europe_1.jpg",
+        "price": 7500000,
+        "button_link": "#contact_form",
+        "country": "Europe",
+    },
+    {
+        "title": "BMW X7 xDrive 40 d M Sport, 2023",
+        "img": "assets/img/portfolio/europe_2.jpg",
+        "price": 7500000,
+        "button_link": "#contact_form",
+        "country": "Europe",
+    },
+    {
+        "title": "Porsche Cayenne E-Hybrid Coupe Platinum Edition, 2022 год",
+        "img": "assets/img/portfolio/europe_3.jpg",
+        "price": 7500000,
+        "button_link": "#contact_form",
+        "country": "Europe",
+    },
+    # США (USA)
+    {
+        "title": "Chevrolet Trailblazer 2021 год пробег 59.000 км",
+        "img": "assets/img/portfolio/usa_1.jpg",
+        "price": 1750000,
+        "button_link": "https:/wa.me/79182231488",
+        "country": "USA",
+    },
+    {
+        "title": "Chevrolet Camaro 2020 год пробег 70.000 км",
+        "img": "assets/img/portfolio/usa_2.jpg",
+        "price": 2780000,
+        "button_link": "#contact_form",
+        "country": "USA",
+    },
+    {
+        "title": "Ford Mustang 2022 год , пробег 52.000 км",
+        "img": "assets/img/portfolio/usa_3.jpg",
+        "price": 2930000,
+        "button_link": "#contact_form",
+        "country": "USA",
+    },
+]
