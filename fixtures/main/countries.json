@@ -1,0 +1,50 @@
+[
+    {
+        "model": "main.countries",
+        "pk": 2,
+        "fields": {
+            "name": "Корея",
+            "slug": "koreya"
+        }
+    },
+    {
+        "model": "main.countries",
+        "pk": 3,
+        "fields": {
+            "name": "Китай",
+            "slug": "kitaj"
+        }
+    },
+    {
+        "model": "main.countries",
+        "pk": 4,
+        "fields": {
+            "name": "Япония",
+            "slug": "yaponiya"
+        }
+    },
+    {
+        "model": "main.countries",
+        "pk": 5,
+        "fields": {
+            "name": "Европа",
+            "slug": "evropa"
+        }
+    },
+    {
+        "model": "main.countries",
+        "pk": 6,
+        "fields": {
+            "name": "Грузия",
+            "slug": "gruziya"
+        }
+    },
+    {
+        "model": "main.countries",
+        "pk": 7,
+        "fields": {
+            "name": "США",
+            "slug": "ssha"
+        }
+    }
+]

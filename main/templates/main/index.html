@@ -36,15 +36,16 @@
             data-aos-delay="100"
           >
             <li data-filter="*" class="filter-active">Все</li>
-            <li data-filter=".filter-korea">Корея</li>
+            {% for country in countries %}
+              <li data-filter=".filter-{{country.slug}}">{{country.name}}</li> 
+            {% endfor %}
+            {% comment %} <li data-filter=".filter-korea">Корея</li>
             <li data-filter=".filter-china">Китай</li>
             <li data-filter=".filter-japan">Япония</li>
             <li data-filter=".filter-europe">Европа</li>
             <li data-filter=".filter-georgia">Грузия</li>
-            <!-- <li data-filter=".filter-UAE">ОАЭ</li> -->
-            <li data-filter=".filter-usa">США</li>
+            <li data-filter=".filter-usa">США</li> {% endcomment %}
 
-            <!-- <li data-filter=".filter-belarus">Беларусь</li> -->
           </ul>
           <!-- End Portfolio Filters -->
 
@@ -57,15 +58,15 @@
           {% for product in products %}
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ product.country|lower }}">
               <div class="portfolio-content h-100">
-                  <a href="{% static product.img %}" data-gallery="portfolio-gallery-app" class="glightbox">
-                      <img src="{% static product.img %}" class="img-fluid" alt="{{ product.title }}">
+                  <a href="{% static product img %}" data-gallery="portfolio-gallery-app" class="glightbox">
+                      <img src="{% static product.img %}" class="img-fluid" alt="{{ product.name }} {{product.description}}">
                   </a>
                   <div class="portfolio-info">
                       <h4>
-                          <a href="#" title="">{{ product.title }}</a>
+                          <a href="#" title="">{{ product.name }} {{product.description}}</a>
                       </h4>
                       <div class="button-container d-flex align-items-center justify-content-center">
-                          <a href="{{ product.button_link }}" class="btn-iwant mr-3">Хочу такой же</a>
+                          <a href="#contact_form" class="btn-iwant mr-3">Хочу такой же</a>
                           <span class="price-text">Средняя цена {{ product.price|dot_separator }}</span>
                       </div>
                   </div>

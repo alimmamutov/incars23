@@ -1,0 +1,14 @@
+[
+    {
+        "model": "main.products",
+        "pk": 1,
+        "fields": {
+            "name": "BMW 330I",
+            "slug": "bmw-330i",
+            "description": "2021 год , 32 тысячи пробег",
+            "image": "",
+            "price": 3350000,
+            "country": 6
+        }
+    }
+]
