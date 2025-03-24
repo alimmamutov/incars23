@@ -172,7 +172,8 @@ h6 {
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  /* background: var(--accent-color); */
+  background: #f06c00;
   font-size: 14px;
   padding: 8px 25px;
   margin: 0 0 0 30px;
@@ -183,7 +184,8 @@ h6 {
 .btn-iwant,
 .btn-iwant:focus {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  /* background: var(--accent-color); */
+  background: #f06c00;
   font-size: 14px;
   padding: 8px 25px;
   margin: 0 0 0 30px;
@@ -623,6 +625,10 @@ h6 {
   margin-top: 6px;
   font-size: 13px;
 }
+.custom_red {
+  /* color: var(--accent-color); */
+  color: #f06c00;
+}
 
 /*--------------------------------------------------------------
 # Preloader
@@ -669,7 +675,8 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  /* background-color: var(--accent-color); */
+  background-color: #f06c00;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -916,7 +923,8 @@ section,
 
 .hero .btn-get-started {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  /* background: var(--accent-color); */
+  background: #f06c00;
   font-family: var(--heading-font);
   font-weight: 500;
   font-size: 15px;
@@ -1072,7 +1080,8 @@ section,
   height: 64px;
   font-size: 32px;
   color: #fff;
-  background: var(--accent-color);
+  /* background: var(--accent-color); */
+  background: #f06c00;
   margin-right: 15px;
   line-height: 0;
   border-radius: 5px;
@@ -1361,7 +1370,8 @@ section,
 
 .portfolio .portfolio-filters li:hover,
 .portfolio .portfolio-filters li.filter-active {
-  color: var(--accent-color);
+  /* color: var(--accent-color); */
+  color: #f06c00;
 }
 
 .portfolio .portfolio-filters li:first-child {
@@ -1735,6 +1745,11 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
+.contact .custom_black{
+  color: #555555;
+
+}
+
 /*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/
@@ -2095,7 +2110,7 @@ section,
   height: 30px; /* Фиксированный размер */
   font-size: 14px; /* Размер текста внутри кружочка */
   font-weight: bold;
-  background-color: #0d6efd; /* Цвет Bootstrap primary */
+  background-color: #f06c00 !important; /* Цвет Bootstrap primary */
   color: white;
   border-radius: 50%; /* Круглая форма */
   display: flex;

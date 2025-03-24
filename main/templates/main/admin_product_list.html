@@ -1,0 +1,22 @@
+{% extends "admin/change_list.html" %} {% load i18n %}
+
+{% block result_list %}
+    {{ block.super }} <!-- Выводим стандартную таблицу -->
+
+    <script>
+        // Добавляем обработчик клика на все ячейки строки
+        document.addEventListener("DOMContentLoaded", function () {
+            const rows = document.querySelectorAll(".result-list tbody tr");
+            rows.forEach(function (row) {
+                row.addEventListener("click", function () {
+                    // Находим ссылку в первой ячейке (ссылка на pk)
+                    const link = row.querySelector(".field-pk a");
+                    if (link) {
+                        // Перенаправляем пользователя на эту ссылку
+                        window.location.href = link.href;
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

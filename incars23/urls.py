@@ -16,15 +16,26 @@ Including another URLconf
 """
 
 from django.contrib import admin
+from django.http import HttpResponse
 from django.urls import include, path
 from incars23.settings import DEBUG
 from main import views
 from debug_toolbar.toolbar import debug_toolbar_urls
+from django.conf.urls.static import static
+from incars23 import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
+    path("contact/", views.contact_form, name="contact_form"),
+    path(
+        "contact/success/",
+        lambda request: HttpResponse("Ваша заявка успешно отправлена."),
+        name="contact_success",
+    ),  # Страница успеха
 ]
+
 
 if DEBUG:
     urlpatterns += [path("__debug__/", include("debug_toolbar.urls"))]
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

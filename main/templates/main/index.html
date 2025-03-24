@@ -56,17 +56,21 @@
           >
 
           {% for product in products %}
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ product.country|lower }}">
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ product.country.slug|lower }}">
               <div class="portfolio-content h-100">
-                  <a href="{% static product img %}" data-gallery="portfolio-gallery-app" class="glightbox">
-                      <img src="{% static product.img %}" class="img-fluid" alt="{{ product.name }} {{product.description}}">
+                  <a href="#" data-gallery="portfolio-gallery-app" class="glightbox">
+                    {% if  product.image %}
+                      <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }} {{product.description}}">
+                    {% else %}
+                      <img src="{% static "assets/img/portfolio/image_not_found.png" %}" class="img-fluid" alt="{{ product.name }} {{product.description}}">
+                    {% endif %}
                   </a>
                   <div class="portfolio-info">
                       <h4>
                           <a href="#" title="">{{ product.name }} {{product.description}}</a>
                       </h4>
                       <div class="button-container d-flex align-items-center justify-content-center">
-                          <a href="#contact_form" class="btn-iwant mr-3">Хочу такой же</a>
+                          <a href="https://wa.me/79183275611" class="btn-iwant mr-3">Хочу такой же</a>
                           <span class="price-text">Средняя цена {{ product.price|dot_separator }}</span>
                       </div>
                   </div>

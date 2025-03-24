@@ -584,7 +584,7 @@ url("./fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("wof
 .bi-envelope-fill::before { content: "\f32c"; }
 .bi-envelope-open-fill::before { content: "\f32d"; }
 .bi-envelope-open::before { content: "\f32e"; }
-.bi-envelope::before { content: "\f32f"; }
+.bi-envelope::before { content: "\f32f"; color: #f06c00; }
 .bi-eraser-fill::before { content: "\f330"; }
 .bi-eraser::before { content: "\f331"; }
 .bi-exclamation-circle-fill::before { content: "\f332"; }
@@ -769,7 +769,7 @@ url("./fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("wof
 .bi-gear::before { content: "\f3e5"; }
 .bi-gem::before { content: "\f3e6"; }
 .bi-geo-alt-fill::before { content: "\f3e7"; }
-.bi-geo-alt::before { content: "\f3e8"; }
+.bi-geo-alt::before { content: "\f3e8"; color: #f06c00; }
 .bi-geo-fill::before { content: "\f3e9"; }
 .bi-geo::before { content: "\f3ea"; }
 .bi-gift-fill::before { content: "\f3eb"; }
@@ -1242,7 +1242,7 @@ url("./fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("wof
 .bi-telephone-plus::before { content: "\f5be"; }
 .bi-telephone-x-fill::before { content: "\f5bf"; }
 .bi-telephone-x::before { content: "\f5c0"; }
-.bi-telephone::before { content: "\f5c1"; }
+.bi-telephone::before { content: "\f5c1"; color: #f06c00;}
 .bi-terminal-fill::before { content: "\f5c2"; }
 .bi-terminal::before { content: "\f5c3"; }
 .bi-text-center::before { content: "\f5c4"; }
