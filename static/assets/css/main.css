@@ -196,13 +196,15 @@ h6 {
 .btn-iwant:hover,
 .btn-iwant:focus:hover {
   color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  /* background: color-mix(in srgb, var(--accent-color), transparent 15%); */
+  background-color: #d45c00;
 }
 
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
   color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  /* background: color-mix(in srgb, var(--accent-color), transparent 15%); */
+  background-color: #d45c00;
 }
 
 
@@ -257,6 +259,7 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
+    /* color: #f06c00; */
     padding: 18px 15px;
     font-size: 16px;
     font-family: var(--nav-font);
@@ -283,7 +286,8 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-hover-color);
+    /* color: var(--nav-hover-color); */
+    color: #f06c00;
   }
 
   .navmenu .dropdown ul {
@@ -938,7 +942,9 @@ section,
 }
 
 .hero .btn-get-started:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  /* background: color-mix(in srgb, var(--accent-color), 
+  transparent 20%); */
+  background-color: #d45c00;
 }
 
 .hero .carousel-control-prev,
