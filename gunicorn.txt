@@ -1,0 +1,11 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+[Service]
+User=django
+Group=www-data
+WorkingDirectory=/home/django/incars23
+ExecStart=/home/django/venv/bin/gunicorn --access-logfile -
+--workers 3 --bind unix:/home/django/incars23/incars23/incars23.sock incars23.wsgi
+[Install]
+WantedBy=multi-user.target
