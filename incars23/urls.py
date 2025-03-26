@@ -23,16 +23,24 @@ from main import views
 from debug_toolbar.toolbar import debug_toolbar_urls
 from django.conf.urls.static import static
 from incars23 import settings
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import CarSitemap, StaticViewSitemap
+
+sitemaps = {
+    "static": StaticViewSitemap,
+    # "cars": CarSitemap
+}
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
-    path("contact/", views.contact_form, name="contact_form"),
     path(
-        "contact/success/",
-        lambda request: HttpResponse("Ваша заявка успешно отправлена."),
-        name="contact_success",
-    ),  # Страница успеха
+        "sitemap.xml",
+        sitemap,
+        {"sitemaps": sitemaps},
+        name="django.contrib.sitemaps.views.sitemap",
+    ),
 ]
 
 

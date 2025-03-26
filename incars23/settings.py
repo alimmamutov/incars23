@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.humanize",
     "debug_toolbar",
+    "django.contrib.sitemaps",
     "main",
 ]
 
