@@ -24,11 +24,11 @@ from debug_toolbar.toolbar import debug_toolbar_urls
 from django.conf.urls.static import static
 from incars23 import settings
 from django.contrib.sitemaps.views import sitemap
-from .sitemaps import CarSitemap, StaticViewSitemap
+from .sitemaps import StaticViewSitemap
 
 sitemaps = {
     "static": StaticViewSitemap,
-    # "cars": CarSitemap
+    # "products": CarSitemap,
 }
 
 

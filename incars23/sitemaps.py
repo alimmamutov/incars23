@@ -5,8 +5,8 @@ from main.models import Products
 
 
 class StaticViewSitemap(Sitemap):
-    priority = 0.5  # Приоритет в поиске (0.1-1.0)
-    changefreq = "weekly"  # Как часто обновляется ('always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never')
+    priority = 1.0  # Приоритет в поиске (0.1-1.0)
+    changefreq = "daily"  # Как часто обновляется ('always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never')
 
     def items(self):
         # Возвращает список URL или объектов
@@ -18,9 +18,9 @@ class StaticViewSitemap(Sitemap):
         return reverse(item)  # Генерирует полный URL
 
 
-class CarSitemap(Sitemap):
-    changefreq = "daily"
-    priority = 0.7
+# class CarSitemap(Sitemap):
+#     changefreq = "daily"
+#     priority = 0.7
 
-    def items(self):
-        return Products.objects.all()  # Только опубликованные авто
+#     def items(self):
+#         return Products.objects.all()  # Только опубликованные авто
