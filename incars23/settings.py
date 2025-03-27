@@ -147,3 +147,11 @@ THOUSAND_SEPARATOR = "."  # Установка точки как раздели�
 DECIMAL_SEPARATOR = (
     ","  # Если нужно, установите запятую как разделитель десятичных дробей
 )
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://incars23.ru",  # Ваш домен
+    "https://www.incars23.ru",
+]
+SESSION_COOKIE_SECURE = True  # Для HTTPS
+CSRF_COOKIE_SECURE = True  # Для HTTPS
+CSRF_COOKIE_SAMESITE = "Lax"
