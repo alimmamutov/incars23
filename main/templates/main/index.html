@@ -90,3 +90,46 @@
 </section>
 <!-- /Portfolio Section -->
 {% endblock %}
+
+
+{% block employee %}
+<section id="employee" class="employee-section">
+  <div class="container py-5">
+      <h2 class="section-title h2">Наша команда</h2>
+      
+      <div id="employeesCarousel" class="carousel slide" data-bs-ride="false">
+          <div class="carousel-inner">
+              {% for group in employee_groups %}
+              <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                  <div class="row">
+                      {% for employee in group %}
+                      <div class="col-12 col-md-4 mb-4">
+                          <div class="employee-card">
+                              <img src="{{ employee.image.url }}" alt="{{ employee.name }}" class="employee-img">
+                              <h4 class="employee-name">{{ employee.name }}</h4>
+                              <p class="employee-position">{{ employee.position }}</p>
+                              <a href="tel:{{ employee.phone }}" class="employee-phone">{{ employee.phone }}</a>
+                          </div>
+                      </div>
+                      {% endfor %}
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+          
+          <!-- Кастомные стрелки -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#employeesCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Предыдущий</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#employeesCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Следующий</span>
+          </button>
+      </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

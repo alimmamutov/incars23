@@ -2242,3 +2242,132 @@ section,
     margin: 0 auto; /* Центрируем третий блок */
   }
 }
+
+/* Секция сотрудников */
+.employee-section {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+  position: relative;
+}
+
+.employee-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+/* Карусель */
+.carousel {
+  padding: 0 50px;
+}
+
+/* Кастомные стрелки */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+.carousel-control-prev {
+  left: -30px;
+  justify-content: flex-start;
+}
+
+.carousel-control-next {
+  right: -30px;
+  justify-content: flex-end;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(240, 108, 0, 0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-size: 60%;
+}
+
+/* Карточка сотрудника */
+.employee-card {
+  text-align: center;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 25px 20px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+/* Фото сотрудника - квадратное */
+.employee-img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  border-radius: 5px; /* Чёткий квадрат без скругления углов */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Лёгкая тень для объёма */
+  display: block; /* Убирает лишнее пространство вокруг */
+  overflow: hidden; /* Гарантирует обрезку по границам */
+}
+
+/* Текст в карточке */
+.employee-name {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.employee-position {
+  color: #6c757d;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.employee-phone {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: transparent;
+  color: #f06c00;
+  border: 1px solid #f06c00;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.employee-phone:hover {
+  background-color: #f06c00;
+  color: white;
+}
+
+/* Адаптивность */
+@media (max-width: 767.98px) {
+  .employee-section {
+      padding: 40px 0;
+  }
+  
+  .carousel {
+      padding: 0 30px;
+  }
+  
+  .employee-img {
+      width: 160px;
+      height: 160px;
+  }
+  
+  .carousel-control-prev {
+      left: -15px;
+  }
+  
+  .carousel-control-next {
+      right: -15px;
+  }
+}

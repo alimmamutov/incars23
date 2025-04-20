@@ -2,6 +2,8 @@ from email.mime import image
 from hashlib import blake2s
 from tokenize import Triple
 from django.db import models
+from django.utils.safestring import mark_safe
+from django.utils.html import format_html
 
 
 # Create your models here.
@@ -73,3 +75,32 @@ class Leads(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.phone}"
+
+
+class Employee(models.Model):
+    name = models.CharField("ФИО", max_length=100)
+    position = models.CharField("Должность", max_length=100)
+    phone = models.CharField("Телефон", max_length=20)
+    image = models.ImageField("Фото", upload_to="employees/")
+    is_active = models.BooleanField("Активный", default=True)
+    order = models.PositiveIntegerField("Порядок", default=0)
+
+    class Meta:
+        verbose_name = "Сотрудник"
+        verbose_name_plural = "Сотрудники"
+        ordering = ["order"]
+
+    def __str__(self):
+        return self.name
+
+    def image_tag(self):
+        if self.image:
+            return format_html('<img src="{}" width="100" />', self.image.url)
+        return "Нет фото"
+
+    image_tag.short_description = "Превью"
+
+    def phone_link(self):
+        return format_html('<a href="tel:{0}">{0}</a>', self.phone)
+
+    phone_link.short_description = "Телефон"

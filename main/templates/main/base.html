@@ -12,8 +12,8 @@
     <meta name="google-site-verification" content="wc8TcH1RpHhC9aSbb79RpDqG4FwkHRYhuucXgkKur3k" />
 
     <!-- Favicons -->
-    <link href="{% static "assets/img/favicon_new.png" %}" rel="icon" />
-    <link href="{% static "assets/img/favicon_new.png" %} rel="apple-touch-icon" />
+    <link href="{% static "assets/img/favicon_new.ico" %}" rel="icon" />
+    <link href="{% static "assets/img/favicon_new.ico" %}" rel="apple-touch-icon" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -100,7 +100,7 @@
             <li><a href="#workflow">Как мы работаем</a></li>
             <!-- <li><a href="#portfolio">Совершенные сделки</a></li> -->
             <!-- <li><a href="#team">Наша команда</a></li> -->
-
+            <li><a href="#employee">Наша команда</a></li>
             <li><a href="#contact">Контакты</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -400,6 +400,8 @@
         </div>
       </section>
       <!-- WorkFlow Section -->
+
+      {% block employee %}{% endblock %}
 
       <!-- Contact Sections -->
       <!-- Contact Sections -->

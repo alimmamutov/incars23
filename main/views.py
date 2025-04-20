@@ -4,7 +4,7 @@ from django.http import JsonResponse
 
 # from main.content import products
 
-from main.models import Countries, Products, Leads
+from main.models import Countries, Employee, Products, Leads
 
 
 # products.sort(key=lambda x: x["price"])
@@ -14,7 +14,22 @@ from main.models import Countries, Products, Leads
 def index(request):
     countries = Countries.objects.all()
     products = Products.objects.all().order_by("price")
-    context = {"products": products, "countries": countries}
+    employees = Employee.objects.filter(is_active=True).order_by("order")
+    # Группируем по 3 сотрудника для карусели
+    grouped_employees = []
+    temp_group = []
+    for i, emp in enumerate(employees, 1):
+        temp_group.append(emp)
+        if i % 3 == 0:
+            grouped_employees.append(temp_group)
+            temp_group = []
+    if temp_group:
+        grouped_employees.append(temp_group)
+    context = {
+        "products": products,
+        "countries": countries,
+        "employee_groups": grouped_employees,
+    }
 
     return HttpResponse(render(request, "main/index.html", context))
 

@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from main.models import Countries, Leads, Products
+from main.models import Countries, Employee, Leads, Products
 
 # admin.site.register(Countries)
 # admin.site.register(Products)
@@ -44,3 +44,12 @@ class LeadsAdmin(admin.ModelAdmin):
     list_editable = ("is_processed",)  # Возможность редактировать статус прямо в списке
     date_hierarchy = "created_at"  # Иерархия по дате создания
     ordering = ("-created_at",)  # Сортировка по дате создания
+
+
+@admin.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display = ("name", "position", "phone_link", "image_tag", "is_active", "order")
+    list_editable = ("order", "is_active")
+    list_filter = ("is_active",)
+    search_fields = ("name", "position")
+    readonly_fields = ("image_tag",)
