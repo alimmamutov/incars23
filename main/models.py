@@ -45,6 +45,9 @@ class Products(models.Model):
     )
     price = models.PositiveIntegerField(default=0, verbose_name="Цена")
     country = models.ForeignKey(to=Countries, on_delete=models.PROTECT)
+    is_special_offer = models.BooleanField(
+        default=False, verbose_name="Спецпредложение"
+    )
 
     class Meta:
         db_table = "product"

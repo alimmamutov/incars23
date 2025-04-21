@@ -12,6 +12,9 @@ from main.models import Countries, Employee, Products, Leads
 
 # Create your views here.
 def index(request):
+    offers = Products.objects.filter(
+        is_special_offer=True, image__isnull=False
+    ).select_related("country")[:10]
     countries = Countries.objects.all()
     products = Products.objects.all().order_by("price")
     employees = Employee.objects.filter(is_active=True).order_by("order")
@@ -29,6 +32,7 @@ def index(request):
         "products": products,
         "countries": countries,
         "employee_groups": grouped_employees,
+        "special_offers": offers,
     }
 
     return HttpResponse(render(request, "main/index.html", context))

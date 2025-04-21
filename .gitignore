@@ -14,3 +14,4 @@ db.sqlite3
 incars23/settings_local.py
 settings_local.py
 staticfiles
+main/templates/main/index copy.html

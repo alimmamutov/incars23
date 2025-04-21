@@ -3,92 +3,94 @@
 {% load my_filters %}
 
 {% block products %}
-<!-- Products Section -->
-<section id="products" class="portfolio section">
+
+<section id="cars" class="cars">
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
-    <h2>Автомобили</h2>
+    <!-- Карусель спецпредложений -->
+    <div class="special-offers-wrapper full-width-carousel mb-0" data-aos="fade-up"> <!-- Добавлен mb-0 -->
+        <div class="container-fluid px-0">
+            <h2 class="special-offers__title">Специальные предложения</h2>
+            
+            <div id="specialOffersCarousel" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner">
+                    {% for product in special_offers %}
+                        {% if product.is_special_offer %}
+                            <!-- Карточка продукта -->
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                <div class="full-width-offer">
+                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="full-width-offer__image">
+                                    <div class="full-width-offer__content">
+                                        <h3 class="full-width-offer__title">{{ product.name }}</h3>
+                                        <div class="full-width-offer__price">{{ product.price }} ₽</div>
+                                        <p class="full-width-offer__details">
+                                            {% if product.description %}
+                                                {{ product.description|truncatechars:100 }}
+                                            {% endif %}
+                                        </p>
+                                        <div class="full-width-offer__button-wrapper">
+                                            <a href="https://wa.me/79183275611" class="btn btn-primary btn-whatsapp">Хочу такой же</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% empty %}
+                        <div class="alert alert-info">Нет специальных предложений</div>
+                    {% endfor %}
+                </div>
+                
+                <!-- Кнопки управления -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#specialOffersCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#specialOffersCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio section pt-1"> <!-- Добавлен pt-2 и убран лишний отступ -->
+    <div class="container">
+      <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+          <li data-filter="*" class="filter-active">Все</li>
+          {% for country in countries %}
+            <li data-filter=".filter-{{country.slug}}">{{country.name}}</li> 
+          {% endfor %}
+        </ul>
 
-    <!-- КАРУСЕЛЬ КАСТОМ -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-      <!-- Section Title -->
-      <!-- <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>
-          Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-          consectetur velit
-        </p>
-      </div> -->
-      <!-- End Section Title -->
-
-      <div class="container">
-        <div
-          class="isotope-layout"
-          data-default-filter="*"
-          data-layout="masonry"
-          data-sort="original-order"
-        >
-          <ul
-            class="portfolio-filters isotope-filters"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <li data-filter="*" class="filter-active">Все</li>
-            {% for country in countries %}
-              <li data-filter=".filter-{{country.slug}}">{{country.name}}</li> 
-            {% endfor %}
-            {% comment %} <li data-filter=".filter-korea">Корея</li>
-            <li data-filter=".filter-china">Китай</li>
-            <li data-filter=".filter-japan">Япония</li>
-            <li data-filter=".filter-europe">Европа</li>
-            <li data-filter=".filter-georgia">Грузия</li>
-            <li data-filter=".filter-usa">США</li> {% endcomment %}
-
-          </ul>
-          <!-- End Portfolio Filters -->
-
-          <div
-            class="row gy-4 isotope-container"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-
+        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
           {% for product in products %}
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ product.country.slug|lower }}">
-              <div class="portfolio-content h-100">
-                  <a href="#" data-gallery="portfolio-gallery-app" class="glightbox">
-                    {% if  product.image %}
-                      <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }} {{product.description}}">
-                    {% else %}
-                      <img src="{% static "assets/img/portfolio/image_not_found.png" %}" class="img-fluid" alt="{{ product.name }} {{product.description}}">
-                    {% endif %}
-                  </a>
-                  <div class="portfolio-info">
-                      <h4>
-                          <a href="#" title="">{{ product.name }} {{product.description}}</a>
-                      </h4>
-                      <div class="button-container d-flex align-items-center justify-content-center">
-                          <a href="https://wa.me/79183275611" class="btn-iwant mr-3">Хочу такой же</a>
-                          <span class="price-text">Средняя цена {{ product.price|dot_separator }}</span>
-                      </div>
-                  </div>
+            <div class="portfolio-content h-100">
+              <a href="#" data-gallery="portfolio-gallery-app" class="glightbox">
+                {% if product.image %}
+                  <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }} {{product.description}}">
+                {% else %}
+                  <img src="{% static 'assets/img/portfolio/image_not_found.png' %}" class="img-fluid" alt="{{ product.name }} {{product.description}}">
+                {% endif %}
+              </a>
+              <div class="portfolio-info">
+                <h4><a href="#" title="">{{ product.name }} {{product.description}}</a></h4>
+                <div class="button-container d-flex align-items-center justify-content-center">
+                  <a href="https://wa.me/79183275611" class="btn-iwant mr-3">Хочу такой же</a>
+                  <span class="price-text">Средняя цена {{ product.price|dot_separator }}</span>
+                </div>
               </div>
+            </div>
           </div>
           {% endfor %}
-
-
-          </div>
-          <!-- End Portfolio Container -->
         </div>
       </div>
-    </section>
-    <!-- /Portfolio Section -->
-  </div>
-  <!-- End Section Title -->
+    </div>
+  </section>
 </section>
-<!-- /Portfolio Section -->
+
 {% endblock %}
 
 
